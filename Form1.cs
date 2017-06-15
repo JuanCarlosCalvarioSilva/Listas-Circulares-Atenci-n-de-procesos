@@ -23,7 +23,7 @@ namespace Listas_Circulares_Atención_de_procesos
             Random ciclosNecesariosPorProceso = new Random();
             Random probabilidad = new Random();
 
-            Lista_circular ldoble = new Lista_circular();
+            Lista_circular lcircular = new Lista_circular();
 
             for (int ciclo = 1; ciclo <= 200; ciclo++) //200
             {
@@ -31,13 +31,13 @@ namespace Listas_Circulares_Atención_de_procesos
                 {
                     Proceso nuevo = new Proceso();
                     nuevo.tiempo = ciclosNecesariosPorProceso.Next(4, 12);
-                    ldoble.agregar(nuevo);
+                    lcircular.agregar(nuevo);
                     contProcsFormados++;
                 }
-                if (ldoble.meter() != null)
+                if (lcircular.meter() != null)
                 {
-                    ldoble.meter().tiempo--;
-                    if (ldoble.meter().tiempo == 0)
+                    lcircular.meter().tiempo--;
+                    if (lcircular.meter().tiempo == 0)
                         contPAtendido++;
                 }
                 else
